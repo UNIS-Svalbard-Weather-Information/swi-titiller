@@ -1,0 +1,10 @@
+[project]
+name = "swi-titiller"
+version = "0.1.0"
+description = "A TITILER-based service for serving SWI weather COG"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "titiler-core>=0.26.0",
+    "uvicorn>=0.38.0",
+]
