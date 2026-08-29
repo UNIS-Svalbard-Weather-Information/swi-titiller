@@ -1,12 +1,9 @@
-from urllib.parse import urlparse
-
-from typing import Annotated
-from titiler.core.factory import TilerFactory
-from titiler.core.errors import DEFAULT_STATUS_CODES, add_exception_handlers
-
-from fastapi import FastAPI, Query, HTTPException
-
 import os
+from typing import Annotated
+
+from fastapi import FastAPI, HTTPException, Query
+from titiler.core.errors import DEFAULT_STATUS_CODES, add_exception_handlers
+from titiler.core.factory import TilerFactory
 
 
 def DatasetPathParams(url: Annotated[str, Query(description="Dataset URL")]) -> str:
@@ -49,3 +46,9 @@ app.include_router(
 )
 
 add_exception_handlers(app, DEFAULT_STATUS_CODES)
+
+
+@app.get("/health", tags=["Health"])
+def health():
+    """Liveness/readiness probe for the container healthcheck and Swarm rolling updates."""
+    return {"status": "ok"}
