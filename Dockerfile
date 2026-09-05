@@ -5,7 +5,7 @@ COPY pyproject.toml .
 RUN uv pip compile pyproject.toml > requirements.txt
 
 # Stage 2: Build
-FROM python:3.13-slim AS builder
+FROM python:3.14-slim AS builder
 WORKDIR /swi
 # Install system dependencies
 RUN apt-get update && apt-get install -y libexpat1 && rm -rf /var/lib/apt/lists/*
@@ -13,7 +13,7 @@ COPY --from=uv /swi/requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
 # Stage 3: Runtime
-FROM python:3.13-slim
+FROM python:3.14-slim
 WORKDIR /swi
 # Install system dependencies (curl is needed for the HEALTHCHECK below)
 RUN apt-get update && apt-get install -y --no-install-recommends libexpat1 curl && rm -rf /var/lib/apt/lists/*
