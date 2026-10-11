@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.0.4](https://github.com/UNIS-Svalbard-Weather-Information/swi-titiller/compare/0.0.3...0.0.4) (2026-10-11)
+
+
+### Bug Fixes
+
+* **deps:** refresh uv.lock to current releases ([6cac6f7](https://github.com/UNIS-Svalbard-Weather-Information/swi-titiller/commit/6cac6f734a677a6b76fd3121103401fc3b0dba46))
+* **deps:** restore a valid uv.lock after merging main ([4056f67](https://github.com/UNIS-Svalbard-Weather-Information/swi-titiller/commit/4056f67695777230eeedf15b75976d9057026913))
+
 ## [0.0.3](https://github.com/UNIS-Svalbard-Weather-Information/swi-titiller/compare/0.0.2...0.0.3) (2026-08-29)
 
 
