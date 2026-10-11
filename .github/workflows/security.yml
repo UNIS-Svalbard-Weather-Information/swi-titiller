@@ -18,6 +18,3 @@ jobs:
     uses: UNIS-Svalbard-Weather-Information/swi-shared-workflows/.github/workflows/security.yml@main
     with:
       shared-ref: main
-      # Findings are shown but do not fail the build while the repository clears its
-      # backlog. Delete this line (default false) once the checks pass.
-      report-only: true
