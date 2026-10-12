@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.1.0](https://github.com/UNIS-Svalbard-Weather-Information/swi-titiller/compare/0.0.4...0.1.0) (2026-10-12)
+
+
+### Features
+
+* **docker:** run the tile server as an unprivileged user ([915892f](https://github.com/UNIS-Svalbard-Weather-Information/swi-titiller/commit/915892faf01c24f9085320157e76ce7ab21a3100))
+* **docker:** run the tile server as an unprivileged user ([210759e](https://github.com/UNIS-Svalbard-Weather-Information/swi-titiller/commit/210759e40bf7448acff1049f67a957dc24d9e7b5))
+
 ## [0.0.4](https://github.com/UNIS-Svalbard-Weather-Information/swi-titiller/compare/0.0.3...0.0.4) (2026-10-11)
 
 
