@@ -6,7 +6,7 @@ COPY pyproject.toml uv.lock ./
 RUN uv export --frozen --no-dev --no-emit-project -o requirements.txt
 
 # Stage 2: Build
-FROM python:3.13-slim AS builder
+FROM python:3.15-slim AS builder
 WORKDIR /swi
 # Install system dependencies
 RUN apt-get update && apt-get install -y libexpat1 && rm -rf /var/lib/apt/lists/*
@@ -14,7 +14,7 @@ COPY --from=uv /swi/requirements.txt .
 RUN pip install --no-cache-dir --require-hashes -r requirements.txt
 
 # Stage 3: Runtime
-FROM python:3.13-slim
+FROM python:3.15-slim
 # The project reserves uids above 9000. Every SWI image that shares a volume with this one
 # (the cron job that writes the forecast data) uses the same uid and gid, so the files this
 # service reads and the user it runs as always match.
